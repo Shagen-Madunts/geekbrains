@@ -14,7 +14,7 @@ if revenue > cost > 0 and revenue > 0:
     print(f'Прибыль фирмы на одного сотрудника {revenue / workers:.2f}')
     print('end program')
 else:
-    print('Фирма работает в убыток')
+    print('Фирма работает в убыток!')
     print('end program')
 
 
