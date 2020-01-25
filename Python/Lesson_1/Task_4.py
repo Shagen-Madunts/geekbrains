@@ -12,7 +12,7 @@ if 10 <= number >= -10:
         if var % 10 > max_numeral:
             max_numeral = var % 10
         var = var // 10
-    print(f'Наибольшая цифра {max_numeral}')
+    print(f'Наибольшая цифра: {max_numeral}')
     print('end program')
 else:
     print('Введите число а не цифру!')
