@@ -4,3 +4,7 @@
 Для выполнения задания обязательно использовать генератор.
 """
 
+source_list = [1, 2, 3, 4, 4, 3, 2, 1, 5]
+print(f'Исходный лист {source_list}')
+new_list = [source_list[i] for i in range(len(source_list)) if source_list.count(source_list[i]) == 1]
+print(f'Новый лист {new_list}')
