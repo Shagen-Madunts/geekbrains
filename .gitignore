@@ -1,6 +1,7 @@
 _
 __pycache__
 .idea/
+.idea
 *.DS_Store
 *.pyc
 *.swp
