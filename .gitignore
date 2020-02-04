@@ -6,7 +6,7 @@ __pycache__
 *.swp
 *.xml
 *.egg-info
-
+codestyles
 build
 dist
 public
