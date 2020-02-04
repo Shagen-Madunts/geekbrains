@@ -14,6 +14,8 @@ colors/
 cc-test-reporter
 coverage/
 htmlcov/
+colors/
+codestyles/
 .coverage
 coverage.xml
 __version__.py
