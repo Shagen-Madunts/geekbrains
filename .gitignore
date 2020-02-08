@@ -22,3 +22,5 @@ codestyles/
 coverage.xml
 __version__.py
 /wand.yml
+.idea/dictionaries/Datascientolog.xml
+.idea/encodings.xml
