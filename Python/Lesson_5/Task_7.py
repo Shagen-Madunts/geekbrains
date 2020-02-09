@@ -31,7 +31,7 @@ with open(filename, encoding='utf-8') as file:
     record_profit = {'average_profit': statistics.mean(profit)}
     report.append(records)
     report.append(record_profit)
-    print(f'Средняя прибыль фирм: {round(statistics.mean(avg_profit),0)}')
+    print(f'Средняя прибыль фирм: {round(statistics.mean(profit),0)}')
     print(report)
 
 filename_out = f'files/task7_output.json'
