@@ -16,4 +16,43 @@
 make_order() вернет строку: **\n\n***. """
 
 
+class Cell:
+    def __init__(self, number):
+        self.cell = ""
+        self.number = int(number)
+
+    def __add__(self, other):
+        return self.number + other
+
+    def __sub__(self, other):
+        if self.number - other > 0:
+            return self.number - other
+        else:
+            print('Разница меньше нуля или ее нет')
+
+    def __mul__(self, other):
+        return self.number * other
+
+    def __truediv__(self, other):
+        return self.number // other
+
+    def make_order(self, cells_in_row):
+        while self.number > 0:
+            self.number -= cells_in_row
+            if self.number < 0:
+                self.cell += ("*" * (cells_in_row + self.number) + "\n")
+            else:
+                self.cell += ("*" * cells_in_row + "\n")
+        return self.cell
+
+    def __call__(self, param_2):
+        self.number = param_2
+
+
+inst = Cell(42)
+print(inst + 15)
+print(inst * 15)
+print(inst - 15)
+print(inst / 15)
+print(inst.make_order(20))
 

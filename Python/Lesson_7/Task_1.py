@@ -12,5 +12,28 @@
 """
 
 
+class Matrix:
+    def __init__(self, matrix):
+        self.matrix = matrix
 
+    def __str__(self):
+        return f"\n{str(self.matrix[0])}\n{str(self.matrix[1])}"
+
+    def __add__(self, other):
+        new_matrix = [f for f in self.matrix]
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[0])):
+                new_matrix[i][j] = self.matrix[i][j] + other.matrix[i][j]
+        return new_matrix
+
+
+inst_a = Matrix([[1, 2], [4, 5]])
+inst_b = Matrix([[7, 8], [1, 7]])
+
+print(f"Матрица A: {inst_a}\n")
+print(f"Матрица B: {inst_b}")
+c = inst_a + inst_b
+print(f"\nРезультат сложения матриц A и B:")
+for el in c:
+    print(el)
 
