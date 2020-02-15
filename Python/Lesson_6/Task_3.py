@@ -20,9 +20,6 @@ class Worker:
 
 
 class Position(Worker):
-    def __init__(self, name, surname, position):
-        super().__init__(name, surname, position)
-
     def get_full_name(self):
         print(f"Имя: {self.name} {self.surname}")
 
