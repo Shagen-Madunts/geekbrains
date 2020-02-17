@@ -19,7 +19,7 @@ make_order() вернет строку: **\n\n***. """
 class Cell:
     def __init__(self, number):
         self.cell = ""
-        self.number = int(number)
+        self.number = number
 
     def __add__(self, other):
         return self.number + other
