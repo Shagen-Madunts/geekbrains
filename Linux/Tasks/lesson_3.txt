@@ -1,0 +1,48 @@
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ mkdir lesson_3
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ cd lesson_3/
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ 
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ vim filevim.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat filevim.txt 
+"""Печать"""
+print("Hello World")
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ wc -l filevim.txt 
+2 filevim.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ vim file2.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat file2.txt 
+print("Linear Regression")
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat filevim.txt file2.txt > summary_print.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ tree
+.
+├── file2.txt
+├── filevim.txt
+└── summary_print.txt
+
+0 directories, 3 files
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat summary_print.txt 
+"""Печать"""
+print("Hello World")
+print("Linear Regression")
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat >> summary_print.txt 
+print("Lesson 3")
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat summary_print.txt 
+"""Печать"""
+print("Hello World")
+print("Linear Regression")
+print("Lesson 3")
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ ll | cat > information.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat information.txt 
+итого 20
+drwxrwxr-x 2 student student 4096 фев 22 08:42 ./
+drwxrwxr-x 3 student student 4096 фев 22 08:29 ../
+-rw-rw-r-- 1 student student   27 фев 22 08:32 file2.txt
+-rw-rw-r-- 1 student student   40 фев 22 08:30 filevim.txt
+-rw-rw-r-- 1 student student    0 фев 22 08:42 information.txt
+-rw-rw-r-- 1 student student   85 фев 22 08:37 summary_print.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cat -b information.txt 
+     1	итого 20
+     2	drwxrwxr-x 2 student student 4096 фев 22 08:42 ./
+     3	drwxrwxr-x 3 student student 4096 фев 22 08:29 ../
+     4	-rw-rw-r-- 1 student student   27 фев 22 08:32 file2.txt
+     5	-rw-rw-r-- 1 student student   40 фев 22 08:30 filevim.txt
+     6	-rw-rw-r-- 1 student student    0 фев 22 08:42 information.txt
+     7	-rw-rw-r-- 1 student student   85 фев 22 08:37 summary_print.txt

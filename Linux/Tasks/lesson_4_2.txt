@@ -1,0 +1,91 @@
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ whoami
+student
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ mkdir lesson_4
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ cd lesson_4
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ echo "print('Hello world')" > fileprint.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ ll
+итого 12
+drwxrwxr-x 2 student student 4096 фев 23 15:10 ./
+drwxr----- 4 student student 4096 фев 23 15:05 ../
+-rw-rw-r-- 1 student student   21 фев 23 15:10 fileprint.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ cat fileprint.txt 
+print('Hello world')
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ sudo useradd -m -d /home/user_new -s /bin/bash user_new
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ cat /etc/passwd | sort | grep ^user
+user5:x:1001:1001::/home/user5:/bin/bash
+user_new:x:1002:1002::/home/user_new:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ sudo chown user_new fileprint.txt 
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ ll
+итого 12
+drwxrwxr-x 2 student  student 4096 фев 23 15:10 ./
+drwxr----- 4 student  student 4096 фев 23 15:05 ../
+-rw-rw-r-- 1 user_new student   21 фев 23 15:10 fileprint.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ sudo su - user_new
+user_new@Ubuntu-MySQL-VirtualBox:~$ whoami
+user_new
+user_new@Ubuntu-MySQL-VirtualBox:~$ pwd
+/home/user_new
+user_new@Ubuntu-MySQL-VirtualBox:~$ exit
+выход
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ sudo chmod 777 ~/gb_lessons/
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ ll
+итого 12
+drwxrwxr-x 2 student  student 4096 фев 23 15:10 ./
+drwxrwxrwx 4 student  student 4096 фев 23 15:05 ../
+-rw-rw-r-- 1 user_new student   21 фев 23 15:10 fileprint.txt
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_4$ sudo su - user_new
+user_new@Ubuntu-MySQL-VirtualBox:~$ cd /home/student/gb_lessons/lesson_4/
+user_new@Ubuntu-MySQL-VirtualBox:/home/student/gb_lessons/lesson_4$ ll
+итого 12
+drwxrwxr-x 2 student  student 4096 фев 23 15:10 ./
+drwxrwxrwx 4 student  student 4096 фев 23 15:05 ../
+-rw-rw-r-- 1 user_new student   21 фев 23 15:10 fileprint.txt
+user_new@Ubuntu-MySQL-VirtualBox:/home/student/gb_lessons/lesson_4$ vim fileprint.txt 
+user_new@Ubuntu-MySQL-VirtualBox:/home/student/gb_lessons/lesson_4$ cat fileprint.txt 
+print('Hello user_new')
+user_new@Ubuntu-MySQL-VirtualBox:/home$ cd /home/user_new/
+user_new@Ubuntu-MySQL-VirtualBox:~$ ll
+итого 40
+drwxr-xr-x 2 user_new user_new 4096 фев 23 15:30 ./
+drwxr-xr-x 6 root     root     4096 фев 23 15:13 ../
+-rw------- 1 user_new user_new   66 фев 23 15:26 .bash_history
+-rw-r--r-- 1 user_new user_new  220 сен  1  2015 .bash_logout
+-rw-r--r-- 1 user_new user_new 3771 сен  1  2015 .bashrc
+-rw-r--r-- 1 user_new user_new 8980 апр 20  2016 examples.desktop
+-rw-r--r-- 1 user_new user_new  655 май 16  2017 .profile
+-rw------- 1 user_new user_new 1230 фев 23 15:30 .viminfo
+user_new@Ubuntu-MySQL-VirtualBox:~$ > counter.py
+user_new@Ubuntu-MySQL-VirtualBox:~$ ll
+итого 40
+drwxr-xr-x 2 user_new user_new 4096 фев 23 15:33 ./
+drwxr-xr-x 6 root     root     4096 фев 23 15:13 ../
+-rw------- 1 user_new user_new   66 фев 23 15:26 .bash_history
+-rw-r--r-- 1 user_new user_new  220 сен  1  2015 .bash_logout
+-rw-r--r-- 1 user_new user_new 3771 сен  1  2015 .bashrc
+-rw-rw-r-- 1 user_new user_new    0 фев 23 15:33 counter.py
+-rw-r--r-- 1 user_new user_new 8980 апр 20  2016 examples.desktop
+-rw-r--r-- 1 user_new user_new  655 май 16  2017 .profile
+-rw------- 1 user_new user_new 1230 фев 23 15:30 .viminfo
+user_new@Ubuntu-MySQL-VirtualBox:~$ vim counter.py 
+user_new@Ubuntu-MySQL-VirtualBox:~$ cat counter.py 
+import time
+
+for i in range(1,10):
+    print(i)
+    time.sleep(1)
+
+user_new@Ubuntu-MySQL-VirtualBox:~$ python counter.py 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+
+

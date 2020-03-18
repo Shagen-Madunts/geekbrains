@@ -1,0 +1,16 @@
+student@Ubuntu-MySQL-VirtualBox:~$ cd gb_lessons/lesson6
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ ll
+итого 20
+drwxrwxr-x 2 student student 4096 мар  6 22:14 ./
+drwxrwxrwx 5 student student 4096 мар  5 15:55 ../
+-rw-rw-r-- 1 student student   26 мар  6 22:11 no.py
+-rw-rw-r-- 1 student student   34 фев 27 21:53 printnum.py
+-rw-rw-r-- 1 student student    0 мар  6 22:10 test.txt
+-rw-rw-r-- 1 student student   34 мар  6 22:14 trim.py
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ find t*.py
+trim.py
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ awk '/print/ {print}' *.py
+	print(i)
+print("Hello")
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
+31 min

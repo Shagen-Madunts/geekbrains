@@ -1,0 +1,57 @@
+
+ubuntu@ip-172-31-17-130:~$ lsblk
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+loop0     7:0    0 89.1M  1 loop /snap/core/8268
+loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1480
+xvda    202:0    0    8G  0 disk
+└─xvda1 202:1    0    8G  0 part /
+xvdf    202:80   0   10G  0 disk
+ubuntu@ip-172-31-17-130:~$ sudo file -s /dev/xvdf
+/dev/xvdf: data
+ubuntu@ip-172-31-17-130:~$ sudo mkfs -t xfs /dev/xvdf
+meta-data=/dev/xvdf              isize=512    agcount=4, agsize=655360 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=0, rmapbt=0, reflink=0
+data     =                       bsize=4096   blocks=2621440, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+ubuntu@ip-172-31-17-130:~$ sudo file -s /dev/xvdf
+/dev/xvdf: SGI XFS filesystem data (blksz 4096, inosz 512, v2 dirs)
+ubuntu@ip-172-31-17-130:~$ lsblk
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+loop0     7:0    0 89.1M  1 loop /snap/core/8268
+loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1480
+xvda    202:0    0    8G  0 disk
+└─xvda1 202:1    0    8G  0 part /
+xvdf    202:80   0   10G  0 disk /data
+ubuntu@ip-172-31-17-130:~$ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  481M     0  481M   0% /dev
+tmpfs          tmpfs      99M  756K   98M   1% /run
+/dev/xvda1     ext4      7.7G  1.1G  6.7G  14% /
+tmpfs          tmpfs     492M     0  492M   0% /dev/shm
+tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
+tmpfs          tmpfs     492M     0  492M   0% /sys/fs/cgroup
+/dev/loop0     squashfs   90M   90M     0 100% /snap/core/8268
+/dev/loop1     squashfs   18M   18M     0 100% /snap/amazon-ssm-agent/1480
+tmpfs          tmpfs      99M     0   99M   0% /run/user/1000
+/dev/xvdf      xfs        10G   43M   10G   1% /data
+ubuntu@ip-172-31-17-130:~$ ll /data/
+total 4
+drwxr-xr-x  2 root root    6 Mar  5 13:37 ./
+drwxr-xr-x 24 root root 4096 Mar  5 13:39 ../
+ubuntu@ip-172-31-17-130:~$ sudo chmod go+w /data/
+ubuntu@ip-172-31-17-130:~$ ll /data/
+total 4
+drwxrwxrwx  2 root root    6 Mar  5 13:37 ./
+drwxr-xr-x 24 root root 4096 Mar  5 13:39 ../
+ubuntu@ip-172-31-17-130:~$ cd /data/
+ubuntu@ip-172-31-17-130:/data$ echo "test" > test.txt
+ubuntu@ip-172-31-17-130:/data$ ll
+total 8
+drwxrwxrwx  2 root   root     22 Mar  5 14:08 ./
+drwxr-xr-x 24 root   root   4096 Mar  5 13:39 ../
+-rw-rw-r--  1 ubuntu ubuntu    5 Mar  5 14:08 test.txt

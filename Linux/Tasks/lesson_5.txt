@@ -1,0 +1,128 @@
+#1. На сервере 108 процессов и 3.85 Гб оперативной памяти
+
+
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ cd lesson_3
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ ll
+итого 24
+drwxr----- 2 student student 4096 фев 22 18:01 ./
+drwxrwxrwx 5 student student 4096 фев 27 21:42 ../
+-rwxr----- 1 student student   27 фев 22 08:32 file2.py*
+-rwxr----- 1 student student   40 фев 22 08:30 filevim.txt*
+-rwxr----- 1 student student  377 фев 22 08:42 information.txt*
+-rwxr----- 1 student student   85 фев 22 08:37 summary_print.txt*
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ du -ch *.py
+4,0K	file2.py
+4,0K	итого
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson_3$ cd ..
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ mkdir lesson6
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons$ cd lesson6/
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ ll
+итого 8
+drwxrwxr-x 2 student student 4096 фев 27 21:42 ./
+drwxrwxrwx 5 student student 4096 фев 27 21:42 ../
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ vim printnum.py
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ python printnum.py 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+student@Ubuntu-MySQL-VirtualBox:~/gb_lessons/lesson6$ cat printnum.py 
+for i in range(0,101):
+	print(i)
