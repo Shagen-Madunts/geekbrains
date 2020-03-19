@@ -8,16 +8,13 @@
 Также она должна сообщать пользователю о невозможности деления на ноль, если он ввел его в качестве делителя.
 """
 
-sign_op = 1
-while sign_op != '0':
+
+while True:
     item1 = float(input(f'Введите первое число: '))
     item2 = float(input(f'Введите второе число: '))
     sign_op = input(f'Введите знак операции: ')
     while sign_op != '0' and sign_op != '+' and sign_op != '-' and sign_op != '*' and sign_op != '/':
         sign_op = input(f'Введите корректный знак операции: ')
-    if sign_op == '0':
-        print("\nEnd program")
-        break
 
     if sign_op == '*':
         print(f"Произведение числа {item1} на {item2} равно {item1 * item2}")
@@ -28,5 +25,8 @@ while sign_op != '0':
             print(f"Деление числа {item1} на {item2} равно {item1 / item2}")
     elif sign_op == '+':
         print(f"Сложение числа {item1} с {item2}: равно {item1 + item2}")
-    else:
+    elif sign_op == '-':
         print(f"Вычитание числа {item1} из {item2} равно {item2 - item1}")
+    else:
+        print("\nEnd program")
+        break
