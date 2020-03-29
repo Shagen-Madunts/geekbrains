@@ -1,3 +1,5 @@
+-- Написать крипт, добавляющий в БД vk, которую создали на занятии, 3 новые таблицы (с перечнем полей, указанием индексов и внешних ключей)
+
 DROP TABLE IF EXISTS city_location;
 CREATE TABLE city_location(
 	id SERIAL PRIMARY KEY,
