@@ -12,11 +12,10 @@ d. написать общий вывод: какой из трёх вариан
 ЗАДАЧА: В одномерном массиве целых чисел определить два наименьших элемента.
 """
 
-from sys import getsizeof
 from collections import Mapping, Container
-from numpy import unicode
 from random import randint
-
+from sys import getsizeof
+from numpy import unicode
 
 """
 3.7.3 (default, Mar 27 2019, 17:13:21) [MSC v.1915 64 bit (AMD64)] win32
@@ -28,7 +27,26 @@ from random import randint
 кода после понимания размера исходного массива целых чисел. 
 """
 nums_list = [randint(1, 1000) for _ in range(1000)]
-numbers = nums_list
+
+
+def get_size(objects, exclude_obj=''):
+    sum_memory = 0
+    for el in objects:
+        if el.startswith('__'):
+            continue
+        if el.startswith(exclude_obj):
+            continue
+        elif hasattr(objects[el], '__call__'):
+            continue
+        elif hasattr(objects[el], '__loader__'):
+            continue
+        else:
+            sum_memory += getsizeof(objects[el])
+            print(f"Переменная {el}, "
+                  f"размер памяти {getsizeof(objects[el])}, "
+                  f"класс {type(objects[el])}")
+            # f"значение {objects[el]}")
+    return f"Суммарно переменные заняли {sum_memory} байт(а)"
 
 
 def size_objects(obj, seen):
@@ -50,16 +68,18 @@ def size_objects(obj, seen):
 
     return size_o
 
+
 # Вариант 1
-nums = numbers
+nums = nums_list
 for i in range(len(nums) - 1):
     for j in range(len(nums) - i - 1):
         if nums[j] > nums[j + 1]:
             nums[j], nums[j + 1] = nums[j + 1], nums[j]
-print(f"Размер Вариант 1: {size_objects(nums[0],set())} байт")
+print(f"Размер Вариант 1: {size_objects(nums[0], set())} байт")
+print(f"{get_size(locals(), exclude_obj='nums_list')}\n")
 
 # Вариант 2
-s = numbers
+s = nums_list
 numMin1 = numMin2 = s[0]
 iMin1 = iMin2 = 0
 for i, item in enumerate(s):
@@ -70,10 +90,11 @@ for i, item in enumerate(s):
     elif numMin2 >= item and iMin2 != i:
         numMin2 = item
         iMin2 = i
-print(f"Размер Вариант 2: {size_objects([numMin1, numMin2, iMin1, iMin2, s[0]],set())} байт")
+print(f"Размер Вариант 2: {size_objects([numMin1, numMin2, iMin1, iMin2, s[0]], set())} байт")
+print(f"{get_size(locals(), exclude_obj='nums_list')}\n")
 
 # Вариант 3
-nums = numbers
+nums = nums_list
 if nums[0] > nums[1]:
     min_idx_1 = 0
     min_idx_2 = 1
@@ -89,4 +110,5 @@ for j in range(2, 100):
 
     elif nums[j] < nums[min_idx_2]:
         min_idx_2 = j
-print(f"Размер Вариант 3: {size_objects([min_idx_1, min_idx_2, nums[0]],set())} байт")
+print(f"Размер Вариант 3: {size_objects([min_idx_1, min_idx_2, nums[0]], set())} байт")
+print(f"{get_size(locals(), exclude_obj='nums_list')}\n")
