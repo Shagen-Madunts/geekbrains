@@ -24,7 +24,7 @@ def version_1(s):
             if number_list[j] > number_list[j + 1]:
                 number_list[j], number_list[j + 1] = number_list[j + 1], number_list[j]
     return number_list[0], number_list[1]
-
+print(version_1(num_list))
 """
 
 python -m timeit -n 1000 -s "import Task_1" "Task_1.version_1"
@@ -57,7 +57,7 @@ def version_2(s):
             numMin2 = item
             iMin2 = i
     return iMin1, iMin2
-
+print(version_2(num_list))
 """
 python -m timeit -n 1000 -s "import Task_1" "Task_1.version_2"
 1000 loops, best of 5: 28.6 nsec per loop
@@ -93,7 +93,7 @@ def version_3(s):
         elif s[j] < s[min_idx_2]:
             min_idx_2 = j
     return s[min_idx_1], s[min_idx_2]
-
+print(version_3(num_list))
 """
 
 python -m timeit -n 1000 -s "import Task_1" "Task_1.version_3"
