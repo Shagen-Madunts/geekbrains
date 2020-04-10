@@ -28,10 +28,7 @@ def med(nums):
                 s1.append(nums[j])
             if nums[j] >= val:
                 s2.append(nums[j])
-        print(val, s1, s2)
         if len(s1) == len(s2):
             return val
 
-
-print(f"{sorted(num_list[:])}")
 print(f"Медиана: {med(num_list[:])}")
