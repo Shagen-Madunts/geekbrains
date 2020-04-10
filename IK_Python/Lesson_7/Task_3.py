@@ -8,9 +8,13 @@
 """
 
 import random
-m = 2
+m = 5
 size = 2*m + 1
-num_list = [random.randint(0, 10) for _ in range(size)]
+num_list = list(set([random.randint(0, 10) for _ in range(size)]))
+if len(num_list) % 2 == 0:
+    num_list.append(random.randint(0, 10))
+
+
 print(f"Массив исходный: {num_list}")
 
 # Найдем медиану так, чтобы число её превышений элементами стало равно числу элементов, которые ее не больше.
@@ -20,14 +24,14 @@ def med(nums):
         s1, s2 = [], []
         val = nums[i]
         for j in range(length):
-            if j == i:
-                continue
             if nums[j] <= val:
                 s1.append(nums[j])
-            if nums[j] > val:
+            if nums[j] >= val:
                 s2.append(nums[j])
+        print(val, s1, s2)
         if len(s1) == len(s2):
             return val
 
 
+print(f"{sorted(num_list[:])}")
 print(f"Медиана: {med(num_list[:])}")
