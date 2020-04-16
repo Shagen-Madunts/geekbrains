@@ -20,4 +20,4 @@ def wage():
 
 wage()
 
-# Пример запуска: python Python\Lesson_4\Task_1.py 168 200 15000
+# Пример запуска: python Python\Lesson_4\Task_2.py 168 200 15000
