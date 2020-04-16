@@ -19,7 +19,7 @@ def calc_count_subs(obj_str):
             return
         for j in range(len(obj)):
             list_subs.append(obj[0: j + 1])
-            if obj[0: j + 1] == obj:
+            if obj[0: j + 1] == obj_str:
                 list_subs.remove(obj)
         return get_subs(obj[1: j + 1], list_subs)
 
