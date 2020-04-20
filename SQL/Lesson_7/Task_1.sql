@@ -131,6 +131,3 @@ SELECT name, (SELECT name FROM catalogs where id = catalog_id ) as 'catalog' fro
 Поля from, to и label содержат английские названия городов, поле name — русское. Выведите список рейсов flights с русскими названиями городов */
 
 SELECT `from`, (SELECT name FROM cities where label = `from` ) as 'rusname' from flights ;
-
-
-
