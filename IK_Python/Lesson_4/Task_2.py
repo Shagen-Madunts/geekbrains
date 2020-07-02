@@ -33,7 +33,7 @@ cProfile.run('eratosthenes(1000)')
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.001    0.001    0.045    0.045 <string>:1(<module>)
-        1    0.043    0.043    0.044    0.044 Task_2.py:15(eratosthenes)
+        1    0.043    0.043    0.044    0.044 Lesson_2.py:15(eratosthenes)
         1    0.000    0.000    0.045    0.045 {built-in method builtins.exec}
         1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
      9592    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
@@ -60,7 +60,7 @@ cProfile.run('define_num(1000)')
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.001    0.001   31.491   31.491 <string>:1(<module>)
-        1   31.487   31.487   31.490   31.490 Task_2.py:29(define_num)
+        1   31.487   31.487   31.490   31.490 Lesson_2.py:29(define_num)
         1    0.000    0.000   31.491   31.491 {built-in method builtins.exec}
         1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
      9592    0.003    0.000    0.003    0.000 {method 'append' of 'list' objects}

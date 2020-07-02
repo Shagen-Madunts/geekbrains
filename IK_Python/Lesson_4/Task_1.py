@@ -38,7 +38,7 @@ cProfile.run('version_1(num_list)')
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.000    0.000   10.488   10.488 <string>:1(<module>)
-        1   10.486   10.486   10.488   10.488 Task_2.py:19(version_1)
+        1   10.486   10.486   10.488   10.488 Lesson_2.py:19(version_1)
         1    0.000    0.000   10.488   10.488 {built-in method builtins.exec}
     10000    0.001    0.000    0.001    0.000 {built-in method builtins.len}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
@@ -69,7 +69,7 @@ cProfile.run('version_2(num_list)')
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.000    0.000    0.001    0.001 <string>:1(<module>)
-        1    0.001    0.001    0.001    0.001 Task_2.py:43(version_2)
+        1    0.001    0.001    0.001    0.001 Lesson_2.py:43(version_2)
         1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 """
@@ -107,7 +107,7 @@ cProfile.run('version_3(num_list)')
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.000    0.000    0.001    0.001 <string>:1(<module>)
-        1    0.001    0.001    0.001    0.001 Task_2.py:71(version_3)
+        1    0.001    0.001    0.001    0.001 Lesson_2.py:71(version_3)
         1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 """
